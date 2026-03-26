@@ -1,8 +1,8 @@
 /**
  * Determines whether a string can be segmented into a sequence of valid words.
  *
- * Uses bottom‑up dynamic programming:
- *
+ * Uses bottom‑up dynamic programming
+ * https://leetcode.com/problems/word-break/description/
  * Time Complexity: O(n * m)  
  *   n = length of string  
  *   m = number of words (worst‑case substring comparisons)
