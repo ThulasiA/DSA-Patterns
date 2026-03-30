@@ -3,8 +3,8 @@
 /*
 We're building the game engine for Thrilling Teleporters, a board game with N tiles, starting from tile 0.
 
-Certain tiles contain teleporters that instantly move the player to a specific tile, either forward or backward. For example, here are three teleporters:
-
+Certain tiles contain teleporters that instantly move the player to a specific tile, either forward or backward. 
+For example, here are three teleporters:
 teleporters1 = [
   "3,1", -- From tile 3 to tile  1
   "4,2", -- From tile 4 to tile  2
@@ -13,13 +13,13 @@ teleporters1 = [
 
 Or as seen on the board:
 
-       "3,1"
-     ┌─<───<─┐                                    N = 12
-     v       │
- 0 → 1 → 2 → 3 . 4 . 5 . 6 → 7 → 8 → 9 → 10 → 11 → 12
-         ^       │   │                    ^
-         └─<───<─┘   └──>───>───>───>───>──┘
-           "4,2"             "5,10"
+        "3,1"
+      ┌─<───<─┐                                    N = 12
+      v       │
+  0 → 1 → 2 → 3 . 4 . 5 . 6 → 7 → 8 → 9 → 10 → 11 → 12
+          ^       │   │                    ^
+          └─<───<─┘   └──>───>───>───>───>──┘
+            "4,2"             "5,10"
 
 After rolling the die:
 - The player moves forward by the number rolled.
@@ -55,8 +55,8 @@ teleporters5 = ["3,8", "8,9", "9,3"]
 
 All Test Cases:
 (output can be in any order)
-                           die  start   
-                          sides,tile  N
+destinations(teleporters1,  dieSide,    startTile,  N)
+
 destinations(teleporters1,  6,    0,  12) => [1, 2, 10, 6]
 destinations(teleporters2,  6,   46, 100) => [48, 49, 50, 51, 52, 29]
 destinations(teleporters2, 10,    0,  50) => [1, 2, 3, 4, 7, 8, 9, 10, 22]
