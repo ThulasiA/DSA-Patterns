@@ -11,24 +11,24 @@
  */
 
 function characterReplacement(s, k) {
-    let l = 0
-    let res = 0
-    let maxFreq = 0
-    let map = new Map()
+    let l = 0;
+    let res = 0;
+    let maxFreq = 0;
+    let map = new Map();
 
-    for(let r = 0; r < s.length; r++) {
-        map.set(s[r], (map.get(s[r]) || 0) + 1)
-        maxFreq = Math.max(maxFreq, map.get(s[r]))
+    for (let r = 0; r < s.length; r++) {
+        map.set(s[r], (map.get(s[r]) || 0) + 1);
+        maxFreq = Math.max(maxFreq, map.get(s[r]));
 
-        while(r - l + 1 - maxFreq > k) {
-            map.set(s[l], map.get(s[l]) - 1)
-            l++
+        while (r - l + 1 - maxFreq > k) {
+            map.set(s[l], map.get(s[l]) - 1);
+            l++;
         }
-        res = Math.max(res, r - l + 1)
+        res = Math.max(res, r - l + 1);
     }
 
-    return res
+    return res;
 }
 
 
-console.log(characterReplacement("XYYX", 2))
+console.log(characterReplacement("XYYX", 2));
