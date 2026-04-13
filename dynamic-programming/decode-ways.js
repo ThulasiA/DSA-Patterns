@@ -1,13 +1,13 @@
 /**
  * 
- *
+ * https://leetcode.com/problems/decode-ways/description/
+ * 
  * Time Complexity: O(n)
  * Space Complexity: O(n)
  *
  * @param {string} s - The digit string to decode.
  * @returns {number} Number of valid decodings.
  */
-
 
 
 function decodeWays(s) {
@@ -20,8 +20,10 @@ function decodeWays(s) {
         }
         else {
             dp[i] = dp[i + 1];
-            if ((s[i] === '1') ||
-                (s[i] === '2' && s[i + 1] < 7)
+            if (
+                (i + 1) < s.length &&
+                ((s[i] === '1') ||
+                    (s[i] === '2' && s[i + 1] < '7'))
             ) {
                 dp[i] += dp[i + 2];
             }
