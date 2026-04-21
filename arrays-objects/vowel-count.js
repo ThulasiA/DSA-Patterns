@@ -10,26 +10,26 @@
 // > "banana healthy"
 
 function flippedy(strs) {
-  let words = strs.split(' ')
-  if(words.length === 0) return ''
-  
-  let targetCount = vowelCount(words[0])
-  
-  return words.map((word, i) => {
-    if( i === 0) return word
+  let words = strs.split(' ');
+  if (words.length === 0) return '';
 
-    return (vowelCount(word) === targetCount) ? reverse(word) : word
-   })
-   .join(' ')
+  let targetCount = vowelCount(words[0]);
+
+  return words.map((word, i) => {
+    if (i === 0) return word;
+
+    return (vowelCount(word) === targetCount) ? reverse(word) : word;
+  })
+    .join(' ');
 }
 
 function vowelCount(str) {
-  let match = str.match(/[aeiou]/gi)
-  return match ? match.length : 0
+  let match = str.match(/[aeiou]/gi);
+  return match ? match.length : 0;
 }
 
 function reverse(str) {
-  return [...str].reverse().join('')
+  return [...str].reverse().join('');
 }
 
-console.log(flippedy("cat and mice"))
+console.log(flippedy("cat and mice"));
