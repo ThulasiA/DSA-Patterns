@@ -43,3 +43,30 @@ console.log(permutations([1, 2, 3]));
 // [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 console.log(permutations([1, 1, 3]));
 // [ [ 1, 1, 3 ], [ 1, 3, 1 ], [ 3, 1, 1 ] ]
+
+function genKPermutations(nums, k) {
+    const res = [];
+    const visited = new Array(nums.length).fill(false);
+
+    const backtrack = (perm) => {
+        if (perm.length === k) {
+            res.push([...perm]);
+            return;
+        }
+
+        for (let i = 0; i < nums.length; i++) {
+            if (visited[i]) continue;
+            visited[i] = true;
+            perm.push(nums[i]);
+            backtrack(perm);
+
+            perm.pop();
+            visited[i] = false;
+        }
+
+
+    };
+
+    backtrack([]);
+    return result;
+}
