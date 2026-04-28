@@ -44,6 +44,16 @@ console.log(permutations([1, 2, 3]));
 console.log(permutations([1, 1, 3]));
 // [ [ 1, 1, 3 ], [ 1, 3, 1 ], [ 3, 1, 1 ] ]
 
+/**
+ * 
+ * Given an array nums of distinct integers and an integer k, 
+ * return all possible permutations of k elements from nums. 
+ * You can return the answer in any order. 
+ * 
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+
 function genKPermutations(nums, k) {
     const res = [];
     const visited = new Array(nums.length).fill(false);
@@ -59,14 +69,18 @@ function genKPermutations(nums, k) {
             visited[i] = true;
             perm.push(nums[i]);
             backtrack(perm);
-
             perm.pop();
             visited[i] = false;
         }
-
-
     };
 
     backtrack([]);
-    return result;
+    return res;
 }
+
+let nums = [1, 2, 3], k = 2;
+// [[1,2],[1,3],[2,1],[2,3],[3,1],[3,2]] 
+
+let nums1 = [0, 1], k1 = 1;
+// Output: [[0],[1]] 
+console.log(genKPermutations(nums, k));
