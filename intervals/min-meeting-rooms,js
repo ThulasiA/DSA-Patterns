@@ -1,0 +1,41 @@
+/**
+ * Returns the minimum number of meeting rooms required so that
+ * no intervals overlap. Meetings that end at time t and start at time t
+ * do NOT conflict.
+ *
+ * Approach:
+ *   - Separate start and end times
+ *   - Sort both
+ *   - Sweep with two pointers
+ *
+ * Time Complexity: O(n log n)
+ * Space Complexity: O(n)
+ *
+ * @param {number[][]} intervals - Array of [start, end] times.
+ * @returns {number} Minimum number of rooms required.
+ */
+
+function minMeetingRooms(intervals) {
+    let start = intervals.map(i => i[0]).sort((a, b) => a - b);
+    let end = intervals.map(i => i[1]).sort((a, b) => a - b);
+
+    let res = 0;
+    let count = 0;
+    let s = 0;
+    let e = 0;
+
+    while (s < intervals.length) {
+        if (start[s] < end[e]) {
+            s++;
+            count++;
+        } else {
+            e++;
+            count--;
+        }
+        res = Math.max(res, count);
+    }
+    return count;
+}
+
+let intervals = [[0, 40], [5, 10], [15, 20]];
+console.log(minMeetingRooms(intervals)); // 2
