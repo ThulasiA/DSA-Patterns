@@ -2,7 +2,7 @@
  * Returns all elements of a 2D matrix in clockwise spiral order.
  *
  * Time Complexity: O(m * n)
- * Space Complexity: O(1) extra
+ * Space Complexity: O(1) 
  *
  * @param {number[][]} matrix - 2D array of numbers.
  * @returns {number[]} Elements in clockwise spiral order.
@@ -33,8 +33,8 @@ function spiralMatrix(matrix) {
         for (let i = right - 1; i >= left; i--) {
             res.push(matrix[bottom - 1][i]);
         }
-
         bottom--;
+
         for (let i = bottom - 1; i >= top; i--) {
             res.push(matrix[i][left]);
         }
