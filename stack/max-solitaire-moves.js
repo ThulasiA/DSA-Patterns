@@ -1,3 +1,13 @@
+/** 
+ * https://buttondown.com/cassidoo/archive/u1f34e-what-we-know-is-a-drop-what-we-dont-know/
+ *
+ * Time Complexity: O(n)
+ * Space Complexity: O(n) for the stack
+ *
+ * @param {{rank: number, color: string}[]} cards
+ * @returns {number} Maximum number of valid solitaire moves.
+ */
+
 function maxSolitaireMoves(cards) {
     if (!cards || cards.length < 2) {
         return 0;
