@@ -47,4 +47,4 @@ function jumpGameTwo(nums) {
 }
 
 //const nums = [2,4,1,1,1,1]
-//console.log(jumpGameTwo(nums))
+//console.log(jumpGameTwo(nums)) // 2
