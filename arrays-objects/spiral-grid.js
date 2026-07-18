@@ -47,6 +47,29 @@ function spiralGrid(n) {
     }
 
     console.log(grid);
+
+    // Format the grid 
+    let maxDigits = String(n).length;
+
+    for (let i = 0; i < gridSize; i++) {
+        const row = grid[i]
+            .map((num) => {
+                let strVal = num !== '' ? String(num) : '';
+                return strVal.padStart(maxDigits, ' ');
+            })
+            .join(' ');
+        console.log(row);
+    }
 }
 
 console.log(spiralGrid(8)); // [ [ 0, 1, 2 ], [ 7, 8, 3 ], [ 6, 5, 4 ] ]
+// 0 1 2
+// 7 8 3
+// 6 5 4
+console.log(spiralGrid(30));
+//  0  1  2  3  4  5
+// 19 20 21 22 23  6
+// 18          24  7
+// 17 30       25  8
+// 16 29 28 27 26  9
+// 15 14 13 12 11 10
